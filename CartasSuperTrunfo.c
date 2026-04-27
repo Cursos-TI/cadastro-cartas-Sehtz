@@ -1,19 +1,23 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
+// Tema 1 - Comparação entre as cartas.
+// Objetivo: No nível Mestre.
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
 
     char estado1, codigo_da_carta1[10],nome_da_cidade1[50];
-    int populacao1,numeros_de_pontos_turisticos1;
-    float area1,pib1,densidade_populacional1, pib_percapto1;
+    int numeros_de_pontos_turisticos1;
+    unsigned int populacao1;
+    float area1,pib1,densidade_populacional1, pib_percapto1, 
+    super_poder1, InversoDensidadePopulacional1; 
 
     char estado2,codigo_da_carta2[10],nome_da_cidade2[50];
-    int populacao2, numeros_de_pontos_turisticos2;
-    float area2, pib2, densidade_populacional2, pib_percapto2;
+    int numeros_de_pontos_turisticos2;
+    unsigned int populacao2;
+    float area2, pib2, densidade_populacional2, pib_percapto2, 
+    super_poder2, InversoDensidadePopulacional2;
 
   // Área para entrada de dados
 
@@ -73,12 +77,25 @@ int main() {
     //    Carta 01
 
     densidade_populacional1 = (float) populacao1 / area1;
-    pib_percapto1 = (float) pib1 /  populacao1;
+    pib_percapto1 = (float) pib1 / (float) populacao1;
 
     //    Carta 02
 
     densidade_populacional2 = (float) populacao2 / area2;
-    pib_percapto2 = (float) pib2 /  populacao2;
+    pib_percapto2 = (float) pib2 / (float) populacao2;
+
+    //Inversão de valores da densidade populacional
+
+    InversoDensidadePopulacional1 = (float) 1 / densidade_populacional1;
+    InversoDensidadePopulacional2 = (float) 1 / densidade_populacional2;
+
+    //calculo de super poder
+
+    super_poder1 = (float) populacao1 + area1 + pib1 + numeros_de_pontos_turisticos1 + 
+    pib_percapto1 + InversoDensidadePopulacional1;
+  
+    super_poder2 = (float) populacao2 + area2 + pib2 + numeros_de_pontos_turisticos2 +
+    pib_percapto2 + InversoDensidadePopulacional2;
 
 
   // Área para exibição dos dados da cidade
@@ -94,7 +111,8 @@ int main() {
   printf("PIB: %.2f bilhôes de reais\n", pib1);
   printf("Numero de Pontos Turisticos: %d\n", numeros_de_pontos_turisticos1);
   printf("Densidade Populacional: %.2f hab./Km²\n", densidade_populacional1);
-  printf("PIB Per capita: %.2f R$\n\n", pib_percapto1);
+  printf("PIB Per capita: R$ %f \n", pib_percapto1);
+  printf("Super Poder: %.2f \n\n", super_poder1);
 
   // Carta 02
 
@@ -107,10 +125,35 @@ int main() {
   printf("PIB: %.2f bilhôes de reais \n", pib2);
   printf("Numero de Pontos Turisticos: %d\n", numeros_de_pontos_turisticos2);
   printf("Densidade Populacional: %.2f hab./Km²\n", densidade_populacional2);
-  printf("PIB Per capita: %.2f R$\n\n", pib_percapto2);
+  printf("PIB Per capita: R$ %f \n", pib_percapto2);
+  printf("Super Poder: %.2f \n\n", super_poder2);
 
+  //Área para comparação das cartas (Nível Mestre)
 
+  int resultado_populacao, resultado_area, resultado_pib, resultado_PontosTuristicos,
+  resultado_DensidadePopulacinal, resultado_SuperPoder, resultado_pibpercapita;
+
+  resultado_populacao = populacao1 > populacao2;
+  resultado_area = area1 > area2;
+  resultado_pib = pib1 > pib2;
+  resultado_PontosTuristicos = numeros_de_pontos_turisticos1 > numeros_de_pontos_turisticos2;
+  resultado_DensidadePopulacinal = densidade_populacional1 > densidade_populacional2;
+  resultado_pibpercapita = pib_percapto1 > pib_percapto2;
+  resultado_SuperPoder = super_poder1 > super_poder2;
+
+  printf("**COMPARANDO AS CARTAS**\n\n");
+  printf("Legenda: resultado 1: vencedor CARTA 01\n");
+  printf("         resultado 0: vencedor CARTA 02\n\n");
+
+  printf("População vencedora ____________: %d\n", resultado_populacao);
+  printf("Área vencedora__________________: %d\n", resultado_area);
+  printf("PIB vencedora___________________: %d\n", resultado_pib);
+  printf("Pontos Turisticos vencedora_____: %d\n", resultado_PontosTuristicos);
+  printf("Densidade Populacional vencedora: %d\n", resultado_DensidadePopulacinal);
+  printf("PIB per capito vencedora________: %d\n", resultado_pibpercapita);
+  printf("Super Poder vencedora___________: %d\n\n", resultado_SuperPoder);
 
 
 return 0;
+
 } 
