@@ -141,6 +141,50 @@ int main() {
   resultado_pibpercapita = pib_percapto1 > pib_percapto2;
   resultado_SuperPoder = super_poder1 > super_poder2;
 
+  printf("Comparação de Cartas (Atributo: População)\n");
+  if (resultado_populacao == 1)
+  { printf("Resultado: Carta 1 (São Paulo) Venceu!!\n\n");
+  } else { printf("Resultado: Carta 2 (Rio de Janeiro) Venceu!!\n\n");
+  }
+  
+    printf("Comparação de Cartas (Atributo: Área)\n");
+  if (resultado_area == 1)
+  { printf("Resultado: Carta 1 (São Paulo) Venceu!!\n\n");
+  } else { printf("Resultado: Carta 2 (Rio de Janeiro) Venceu!!\n\n");
+  }
+  
+    printf("Comparação de Cartas (Atributo: PIB)\n");
+  if (resultado_pib == 1)
+  { printf("Resultado: Carta 1 (São Paulo) Venceu!!\n\n");
+  } else { printf("Resultado: Carta 2 (Rio de Janeiro) Venceu!!\n\n");
+  }  
+
+    printf("Comparação de Cartas (Atributo: Pontos Turisticos)\n");
+  if (resultado_PontosTuristicos == 1)
+  { printf("Resultado: Carta 1 (São Paulo) Venceu!!\n\n");
+  } else { printf("Resultado: Carta 2 (Rio de Janeiro) Venceu!!\n\n");
+  }
+
+    printf("Comparação de Cartas (Atributo: Densidade Populacional)\n");
+  if (resultado_DensidadePopulacinal == 1)
+  { printf("Resultado: Carta 1 (São Paulo) Venceu!!\n\n");
+  } else { printf("Resultado: Carta 2 (Rio de Janeiro) Venceu!!\n\n");
+  }
+
+      printf("Comparação de Cartas (Atributo: PIB per capita)\n");
+  if (resultado_pibpercapita == 1)
+  { printf("Resultado: Carta 1 (São Paulo) Venceu!!\n\n");
+  } else { printf("Resultado: Carta 2 (Rio de Janeiro) Venceu!!\n\n");
+  }
+
+    printf("Comparação de Cartas (Atributo: Super Poder)\n");
+  if (resultado_SuperPoder == 1)
+  { printf("Resultado: Carta 1 (São Paulo) Venceu!!\n\n");
+  } else { printf("Resultado: Carta 2 (Rio de Janeiro) Venceu!!\n\n");
+  }
+
+
+  /*
   printf("**COMPARANDO AS CARTAS**\n\n");
   printf("Legenda: resultado 1: vencedor CARTA 01\n");
   printf("         resultado 0: vencedor CARTA 02\n\n");
@@ -152,7 +196,7 @@ int main() {
   printf("Densidade Populacional vencedora: %d\n", resultado_DensidadePopulacinal);
   printf("PIB per capito vencedora________: %d\n", resultado_pibpercapita);
   printf("Super Poder vencedora___________: %d\n\n", resultado_SuperPoder);
-
+*/
 
 return 0;
 
